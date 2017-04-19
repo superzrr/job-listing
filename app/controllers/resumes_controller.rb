@@ -2,7 +2,6 @@ class ResumesController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :destroy]
 
   def index
-    @resumes = Resume.all
   end
 
   def new
@@ -24,6 +23,9 @@ class ResumesController < ApplicationController
   end
 
   def destroy
+    @resume = Resume.find(params[:id])
+    @resume.destroy
+    redirect_to admin_jobs_path
   end
 
   private

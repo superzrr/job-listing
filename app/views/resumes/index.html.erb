@@ -9,9 +9,9 @@
   <tbody>
     <% @resumes.each do |resume| %>
     <tr>
-      <td><%= resume.name %></td>
+      <td><%= resume.content %></td>
       <td><%= link_to("Download",resume.attachment_url) %></td>
-      <td><%= button_to "Delete", resume, method: :delete, class:"btn btn-danger", data:{confirm: "Are you sure that you wish to delete #{resume.name}?"} %></td>
+      <td><%= button_to "Delete", job_resume_path(resume.job,resume), method: :delete, class:"btn btn-danger", data:{confirm: "Are you sure that you wish to delete ?"}%></td>
     </tr>
     <% end %>
   </tbody>
