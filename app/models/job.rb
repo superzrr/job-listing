@@ -12,7 +12,7 @@ class Job < ApplicationRecord
   scope :wage_low_up, ->  { order("wage_lower_bound ASC")}
   scope :wage_upper_down, -> { order("wage_upper_bound DESC")}
   scope :wage_upper_up, ->  { order("wage_upper_bound ASC")}
-  scope :published, ->{ where (is_hidden: false) }
+  scope :published, -> { where(is_hidden: false) }
 
   def publish!
     self.is_hidden = false

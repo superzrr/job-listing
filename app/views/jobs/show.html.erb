@@ -15,4 +15,8 @@
   <h3>contact:<%= @job.contact_email %></h3>
   <br>
 
-  </div>
+</div>
+
+<div class="text-center">
+  <%= link_to("Send my Resume", new_job_resume_path(@job), :style=>"font-size:30px; text-decoration:underline; ") %>
+</div>
